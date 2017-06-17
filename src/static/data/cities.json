@@ -1,0 +1,6 @@
+{
+	"cities": [{ "id": 1, "name": "Tel Aviv", "lat": 32.0042938, "lng": 34.7615399 },
+		{ "id":2,  "name": "New York", "lat": 40.712784, "lng": -74.005941 },
+		{ "id": 3, "name": "Paris", "lat": 48.856614, "lng": 2.352222 },
+		{ "id": 4, "name": "Bangkok", "lat": 13.756331, "lng": 100.501765 }]
+} 
