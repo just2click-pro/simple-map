@@ -119,6 +119,11 @@ body{
 .label {
     font-size: 1rem;
 }
+.coordinates-labels label {
+    color: #fff;
+    font-size: 1.4em;
+    margin-right: 0.3rem;
+}
 .map-container {
     min-height: 350px;
     margin: 1.5rem auto;
