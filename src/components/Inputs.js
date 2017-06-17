@@ -16,14 +16,26 @@ export default class Inputs extends Component {
 	}
 
 	updateCity (e) {
-		let city = this.props.data[0];
-		this.props.onLatLngChange({ lat: city.lat, lng: city.lng });
+		let selection = e.target.value;
+		if (parseInt(selection) >= 0) {
+			let city = this.props.data[parseInt(selection) - 1];
+			this.props.onLatLngChange({ lat: city.lat, lng: city.lng });
+		}
 	}
 
 	render () {
 		return (
 			<div className="input-group">
-				<button className="button" onClick={ (e) => this.updateCity(e) }>Go To Tel Aviv</button>
+				<select className="button" onChange={ (e) => this.updateCity(e) }>
+					<option value="-1">Select a city ...</option>
+					{
+						this.props.data.map((el, index) => {
+							return (
+								<option key={ el.id } value={ el.id }>{ el.name }</option>
+							)
+						})
+					}
+				</select>
 				<label className="label">&nbsp;Zoom:&nbsp;</label>
 				<input className="input" ref={ (el) => { this.$zoomInput = el; }} 
 					type="number" onChange={ (e)=> this.updateZoom(e) } />
